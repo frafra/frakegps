@@ -9,13 +9,18 @@ FrakeGPS simulates a simple GPS receiver which emits NMEA codes. The location is
 ## Dependencies
 
 - cargo
-- gpsd
 - webkit2gtk (devel)
 
 ### Fedora
 
 ```
-dnf install cargo gpsd webkit2gtk3-devel
+sudo dnf install cargo webkit2gtk3-devel
+```
+
+### Ubuntu
+
+```
+sudo apt-get install cargo libwebkit2gtk-4.0-dev
 ```
 
 ## Compile
@@ -29,14 +34,19 @@ cargo build
 ## Usage with gpsd
 
 ```
-./target/debug/frakegps |& gpsd -n -N /dev/stdin
+sudo systemctl stop gpsd.socket
+cargo run -q | gpsd -bnN /dev/stdin
 ```
 
 ## Usage with geoclue
 
 ```
-./target/debug/frakegps |& nc -kl 10110
-avahi-publish -s "FrakeGPS for $(hostname)"  _nmea-0183._tcp 10110 "FrakeGPS service"
+cargo run -q | nc -vkl 10110
+avahi-publish -s "FrakeGPS for $(hostname)" _nmea-0183._tcp 10110
 ```
 
-Note: Unreliable results with avahi.
+# Additional resources
+
+- [NMEA reference](https://www.sparkfun.com/datasheets/GPS/NMEA%20Reference%20Manual-Rev2.1-Dec07.pdf)
+- [gclue-nmea-source.c](https://gitlab.freedesktop.org/geoclue/geoclue/blob/master/src/gclue-nmea-source.c) from geoclue
+- [avahi.rs](https://github.com/zeenix/gps-share/blob/master/src/avahi.rs) from gps-share
