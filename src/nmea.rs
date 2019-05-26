@@ -1,4 +1,5 @@
-extern crate time;
+extern crate chrono;
+use chrono::prelude::*;
 
 fn dec_to_dm(dec: f64) -> f64 {
     let deg = dec.abs().floor();
@@ -14,27 +15,29 @@ fn checksum(message: &String) -> String {
     format!("{:02X}", checksum)
 }
 
-pub fn rmc(lat: f64, lon: f64) -> String {
+pub fn gga(lat: f64, lon: f64, altitude: f64) -> String {
     let lat_nmea = format!("{:08.3}", dec_to_dm(lat)*100.0);
     let lon_nmea = format!("{:09.3}", dec_to_dm(lon)*100.0);
     let ns = if lat.is_sign_negative() { 'S' } else { 'N' };
     let ew = if lon.is_sign_negative() { 'W' } else { 'E' };
-    let now = time::now_utc();
-    let date = now.strftime("%d%m%y").unwrap();
-    let timestamp = now.strftime("%H%M%S").unwrap();
+    let now: DateTime<Utc> = Utc::now();
+    let timestamp = now.format("%H%M%S.%3f");
     let message = [
-            "GPRMC",
+            "GPGGA",
             &timestamp.to_string(),
-            "A", // A: valid, V: invalid
             &lat_nmea,
             &ns.to_string(),
             &lon_nmea,
             &ew.to_string(),
-            "0", // speed over ground (knots)
-            "0", // course over ground (degrees)
-            &date.to_string(),
-            "", // magnetic variation (degrees)
-            "", // E/W (east/west)
+            "1", // Fix valid
+            "",  // Satellites used
+            "",  // HDOP
+            &altitude.to_string(),
+            "M", // meters
+            "0", // Geoid separation
+            "M", // meters
+            "",  // DGPS
+            "0000", // DGPS station ID
         ].join(",");
     let checksum = checksum(&message);
     format!("${}*{}", message, checksum)

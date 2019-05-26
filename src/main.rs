@@ -5,7 +5,7 @@ use web_view::*;
 
 fn main() -> WVResult {
     let html = format!(include_str!("dist/map.html"),
-		styles = inline_style(include_str!("dist/map.css")),
+        styles = inline_style(include_str!("dist/map.css")),
         scripts = inline_script(include_str!("dist/map.js")),
     );
     let webview = web_view::builder()
@@ -19,7 +19,8 @@ fn main() -> WVResult {
             let latlon: Vec<&str> = arg.split(",").collect();
             let lat: f64 = latlon[0].parse().unwrap();
             let lon: f64 = latlon[1].parse().unwrap();
-            println!("{}", nmea::rmc(lat, lon));
+            let alt: f64 = 0.0;
+            println!("{}", nmea::gga(lat, lon, alt));
             Ok(())
         })
         .build()?;
