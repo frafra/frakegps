@@ -6,4 +6,4 @@ edition = "2018"
 
 [dependencies]
 chrono = "0.4"
-web-view = "0.4.1"
+web-view = "0.5.4"
