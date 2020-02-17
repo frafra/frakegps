@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/frafra/frakegps.svg?branch=master)](https://travis-ci.com/frafra/frakegps)
+
 # Description
 
 FrakeGPS simulates a simple GPS receiver which emits NMEA codes. The location is selected clicking on a map, using [web-view](https://github.com/Boscop/web-view) and [Leaflet](http://leafletjs.com/).
