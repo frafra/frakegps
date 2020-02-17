@@ -1,0 +1,14 @@
+sudo: false
+language: rust
+addons:
+  apt:
+    packages:
+      - libwebkit2gtk-4.0-dev
+rust:
+  - stable
+before_script:
+  - |
+      cargo install cargo-travis &&
+      export PATH=$HOME/.cargo/bin:$PATH
+after_success:
+  - cargo coveralls
