@@ -27,6 +27,14 @@ sudo apt-get install cargo libwebkit2gtk-4.0-dev
 
 ## Compile
 
+To build the latest stable release from crates.io:
+
+```
+cargo install frakegps
+```
+
+To built the source from the repository:
+
 ```
 cargo build
 ```
