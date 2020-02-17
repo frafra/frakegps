@@ -42,3 +42,15 @@ pub fn gga(lat: f64, lon: f64, altitude: f64) -> String {
     let checksum = checksum(&message);
     format!("${}*{}", message, checksum)
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn gga_test() {
+        let result = gga(63.43062267277069, 10.39487421512604, 0.0);
+        let expected = ",6325.837,N,01023.692,E,1,,,0,M,0,M,,0000*";
+        assert_eq!(&result[17..result.len()-2], expected);
+    }
+}
