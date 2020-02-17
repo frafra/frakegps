@@ -32,7 +32,7 @@ dependencies = [
 
 [[package]]
 name = "frakegps"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "chrono 0.4.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "web-view 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
