@@ -3,6 +3,13 @@ name = "frakegps"
 version = "0.1.2"
 authors = ["Francesco Frassinelli <fraph24@gmail.com>"]
 edition = "2018"
+description = "Simulate a simple GPS device with gpsd or geoclue2"
+repository = "https://github.com/frafra/frakegps"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+
+[badges]
+travis-ci = { repository = "frafra/frakegps", branch = "master" }
 
 [dependencies]
 chrono = "0.4"
