@@ -35,7 +35,7 @@ name = "frakegps"
 version = "0.1.2"
 dependencies = [
  "chrono 0.4.10 (registry+https://github.com/rust-lang/crates.io-index)",
- "web-view 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "web-view 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -87,7 +87,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "web-view"
-version = "0.6.0"
+version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "boxfnonce 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -137,7 +137,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum redox_syscall 0.1.54 (registry+https://github.com/rust-lang/crates.io-index)" = "12229c14a0f65c4f1cb046a3b52047cdd9da1f4b30f8a39c5063c8bae515e252"
 "checksum time 0.1.42 (registry+https://github.com/rust-lang/crates.io-index)" = "db8dcfca086c1143c9270ac42a2bbd8a7ee477b78ac8e45b19abfb0cbede4b6f"
 "checksum urlencoding 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3df3561629a8bb4c57e5a2e4c43348d9e29c7c29d9b1c4c1f47166deca8f37ed"
-"checksum web-view 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2072c76e359687194782398a2886de992cb34ea587b6b7dc68c9d1113adaf4bc"
+"checksum web-view 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4c8883c45dbb83b50cd86c9715560c0ebd3f97b1cd8483e893af399058828773"
 "checksum webview-sys 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9a9efdb4b93efd358b5c465bbfdeda455ed5438c5b2dc923a3a65d0d90ad0d7e"
 "checksum winapi 0.3.7 (registry+https://github.com/rust-lang/crates.io-index)" = "f10e386af2b13e47c89e7236a7a14a086791a2b88ebad6df9bf42040195cf770"
 "checksum winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
