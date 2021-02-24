@@ -13,4 +13,4 @@ travis-ci = { repository = "frafra/frakegps", branch = "master" }
 
 [dependencies]
 chrono = "0.4"
-web-view = "0.6.2"
+web-view = "0.7.3"
