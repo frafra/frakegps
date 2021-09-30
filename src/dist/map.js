@@ -6,10 +6,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	id: 'osm.standard'
 }).addTo(map);
 
+/* https://github.com/Boscop/web-view/issues/289#issuecomment-878961859 */
+function sendMessageToServer(cmd) {
+    if (window.external !== undefined) {
+        return window.external.invoke(cmd);
+    } else if (window.webkit.messageHandlers.external !== undefined) {
+        return window.webkit.messageHandlers.external.postMessage(cmd);
+    }
+    throw new Error('Failed to locate webkit external handler')
+}
+
 var maker = L.marker();
 map.on('click', function(event) {
     maker.remove()
     maker = L.marker(event.latlng);
     maker.addTo(map);
-    external.invoke([event.latlng.lat, event.latlng.lng]);
+    sendMessageToServer([event.latlng.lat, event.latlng.lng]);
 });
