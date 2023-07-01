@@ -16,13 +16,13 @@ FrakeGPS simulates a simple GPS receiver which emits NMEA codes. The location is
 ### Fedora
 
 ```
-sudo dnf install cargo webkit2gtk3-devel
+sudo dnf install cargo webkit2gtk4.1-devel
 ```
 
 ### Ubuntu
 
 ```
-sudo apt-get install cargo libwebkit2gtk-4.0-dev
+sudo apt-get install cargo libwebkit2gtk-4.1-dev
 ```
 
 ## Compile
