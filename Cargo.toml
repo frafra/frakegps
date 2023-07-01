@@ -2,7 +2,7 @@
 name = "frakegps"
 version = "0.1.3"
 authors = ["Francesco Frassinelli <fraph24@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "Simulate a simple GPS device with gpsd or geoclue2"
 repository = "https://github.com/frafra/frakegps"
 readme = "README.md"
