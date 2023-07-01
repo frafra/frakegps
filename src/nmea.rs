@@ -1,5 +1,6 @@
-extern crate chrono;
-use chrono::prelude::*;
+use time::format_description::FormatItem;
+use time::macros::format_description;
+use time::OffsetDateTime;
 
 fn dec_to_dm(dec: f64) -> f64 {
     let deg = dec.abs().floor();
@@ -15,16 +16,19 @@ fn checksum(message: &String) -> String {
     format!("{:02X}", checksum)
 }
 
+const TIMESTAMP_FORMAT: &[FormatItem<'_>] =
+    format_description!("[hour][minute][second].[subsecond digits:3]");
+
 pub fn gga(lat: f64, lon: f64, altitude: f64) -> String {
     let lat_nmea = format!("{:08.3}", dec_to_dm(lat) * 100.0);
     let lon_nmea = format!("{:09.3}", dec_to_dm(lon) * 100.0);
     let ns = if lat.is_sign_negative() { 'S' } else { 'N' };
     let ew = if lon.is_sign_negative() { 'W' } else { 'E' };
-    let now: DateTime<Utc> = Utc::now();
-    let timestamp = now.format("%H%M%S.%3f");
+    let now = OffsetDateTime::now_utc();
+    let timestamp = now.format(&TIMESTAMP_FORMAT).unwrap();
     let message = [
         "GPGGA",
-        &timestamp.to_string(),
+        &timestamp,
         &lat_nmea,
         &ns.to_string(),
         &lon_nmea,

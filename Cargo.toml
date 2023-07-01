@@ -12,5 +12,5 @@ license = "GPL-3.0-or-later"
 travis-ci = { repository = "frafra/frakegps", branch = "master" }
 
 [dependencies]
-chrono = "0.4"
+time = { version = "0.3", features = ["macros", "formatting"] }
 wry = "0.29.0"
