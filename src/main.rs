@@ -10,7 +10,8 @@ use wry::{
 };
 
 fn main() -> wry::Result<()> {
-    let html = format!(include_str!("dist/map.html"),
+    let html = format!(
+        include_str!("dist/map.html"),
         styles = inline_style(include_str!("dist/map.css")),
         scripts = inline_script(include_str!("dist/map.js")),
     );
