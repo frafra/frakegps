@@ -2,7 +2,7 @@
 
 # Description
 
-FrakeGPS simulates a simple GPS receiver which emits NMEA codes. The location is selected clicking on a map, using [web-view](https://github.com/Boscop/web-view) and [Leaflet](http://leafletjs.com/).
+FrakeGPS simulates a simple GPS receiver which emits NMEA codes. The location is selected clicking on a map, using [wry](https://github.com/tauri-apps/wry) and [Leaflet](http://leafletjs.com/).
 
 ![frakegps-gpsmon](https://user-images.githubusercontent.com/4068/58375414-ba3b3900-7f52-11e9-88bb-c6db1299eff0.png)
 
@@ -11,7 +11,7 @@ FrakeGPS simulates a simple GPS receiver which emits NMEA codes. The location is
 ## Dependencies
 
 - cargo
-- webkit2gtk (devel)
+- webkit2gtk 4.1 (devel)
 
 ### Fedora
 
