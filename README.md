@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/frafra/frakegps.svg?branch=master)](https://travis-ci.com/frafra/frakegps)
+![master](https://github.com/frafra/frakegps/actions/workflows/rust.yml/badge.svg?branch=master)
 
 # Description
 
