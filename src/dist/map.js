@@ -11,5 +11,5 @@ map.on('click', function(event) {
     maker.remove()
     maker = L.marker(event.latlng);
     maker.addTo(map);
-    window.ipc.postMessage([event.latlng.lat, event.latlng.lng]);
+    window.ipc.postMessage(event.latlng.lat+','+event.latlng.lng);
 });
