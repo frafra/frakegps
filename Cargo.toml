@@ -1,6 +1,6 @@
 [package]
 name = "frakegps"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Francesco Frassinelli <fraph24@gmail.com>"]
 edition = "2021"
 description = "Simulate a simple GPS device with gpsd or geoclue2"
