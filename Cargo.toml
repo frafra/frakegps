@@ -13,4 +13,4 @@ travis-ci = { repository = "frafra/frakegps", branch = "master" }
 
 [dependencies]
 time = { version = "0.3", features = ["macros", "formatting"] }
-wry = "0.29.0"
+wry = "0.33.0"
